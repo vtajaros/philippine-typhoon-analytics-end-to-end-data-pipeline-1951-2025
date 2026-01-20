@@ -1,0 +1,23 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.pytest_cache/
+
+# --- Power BI ---
+# Ignore the temp files Power BI creates when open
+*.pbix.temp
+*.tmp
+/backups
+
+# --- Data & OS ---
+# If your raw text files are huge, you might want to ignore them 
+# and only keep the final .csv, but for this project, keeping the .csv is fine.
+.DS_Store
+Thumbs.db
+
+# --- VS Code ---
+.vscode/

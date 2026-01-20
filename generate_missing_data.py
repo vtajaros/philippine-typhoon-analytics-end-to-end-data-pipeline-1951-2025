@@ -1,0 +1,187 @@
+
+import csv
+
+data = [
+    # 1965
+    ("1965", "Patsy", "Bining"), ("1965", "Ruth", ""), ("1965", "Thelma", "Kuring"), 
+    ("1965", "Vera", "Daling"), ("1965", "Amy", "Elang"), ("1965", "Babe", ""), 
+    ("1965", "Carla", "Goring"), ("1965", "Dinah", "Huling"), ("1965", "Emma", "Ibiang"), 
+    ("1965", "13W", "Luming"), ("1965", "Freda", "Miling"), ("1965", "Gilda", "Narsing"), 
+    ("1965", "Harriet", "Openg"), ("1965", "Jean", "Rubing"), ("1965", "Ivy", "Pining"), 
+    ("1965", "Mary", "Saling"), ("1965", "Polly", "Tasing"), ("1965", "Rose", "Unding"), 
+    ("1965", "Trix", "Walding"), ("1965", "Wendy", "Yeyeng"), ("1965", "Faye", "Binang"),
+
+    # 1966
+    ("1966", "Hester", "Atang"), ("1966", "Irma", "Klaring"), ("1966", "Judy", "Deling"), 
+    ("1966", "Kit", "Emang"), ("1966", "Lola", "Gading"), ("1966", "Mamie", "Iliang"), 
+    ("1966", "Ora", "Loleng"), ("1966", "Susan", "Oyang"), ("1966", "Elsie", "Pitang"), 
+    ("1966", "Helen", "Ruping"), ("1966", "Lorna", "Titang"), ("1966", "Nancy", "Uding"), 
+    ("1966", "Olga", "Wening"), ("1966", "Pamela", "Aning"),
+
+    # 1967
+    ("1967", "Ruby", "Auring"), ("1967", "Sally", "Bebeng"), ("1967", "Violet", "Karing"), 
+    ("1967", "Wilda", "Diding"), ("1967", "Clara", "Ising"), ("1967", "Fran", "Mameng"), 
+    ("1967", "Georgia", "Luding"), ("1967", "Iris", "Oniang"), ("1967", "Kate", "Pepang"), 
+    ("1967", "Marge", "Rosing"), ("1967", "Nora", "Sisang"), ("1967", "Carla", "Trining"), 
+    ("1967", "Dinah", "Uring"), ("1967", "Emma", "Welming"), ("1967", "Freda", "Yayang"), 
+    ("1967", "Gilda", "Ading"), ("1967", "Ivy", "Barang"),
+
+    # 1968
+    ("1968", "Kim", "Biring"), ("1968", "Lucy", "Konsing"), ("1968", "Nadine", "Didang"), 
+    ("1968", "Olive", "Edeng"), ("1968", "Rose", "Gloring"), ("1968", "Shirley", "Huaning"), 
+    ("1968", "Trix", "Iniang"), ("1968", "Wendy", "Lusing"), ("1968", "Della", "Maring"), 
+    ("1968", "Elaine", "Nitang"), ("1968", "Gloria", "Osang"), ("1968", "Judy", "Paring"), 
+    ("1968", "Mamie", "Reming"), ("1968", "Nina", "Seniang"), ("1968", "Ora", "Toyang"),
+
+    # 1969
+    ("1969", "Susan", "Atring"), ("1969", "Tess", "Kuring"), ("1969", "Viola", "Elang"), 
+    ("1969", "Winnie", "Goring"), ("1969", "Betty", "Huling"), ("1969", "Cora", "Ibiang"), 
+    ("1969", "Elsie", "Narsing"), ("1969", "Flossie", "Openg"), ("1969", "June", "Pining"), 
+    ("1969", "Kathy", "Rubing"), ("1969", "Lorna", "Saling"),
+
+    # 1971
+    ("1971", "Vera", "Karing"), ("1971", "Wanda", "Diding"), ("1971", "Babe", "Etang"), 
+    ("1971", "Carla", "Gening"), ("1971", "Emma", "Ising"), ("1971", "Freda", "Luding"), 
+    ("1971", "Gilda", "Mameng"), ("1971", "Jean", "Pepang"), ("1971", "Lucy", "Rosing"), 
+    ("1971", "Nadine", "Sisang"), ("1971", "Rose", "Uring"), ("1971", "Agnes", "Warling"), 
+    ("1971", "Bess", "Yayang"), ("1971", "Della", "Ading"), ("1971", "Elaine", "Barang"), 
+    ("1971", "Faye", "Krising"), ("1971", "Hester", "Goying"), ("1971", "Irma", "Ining"),
+
+    # 1972
+    ("1972", "Kit", "Asiang"), ("1972", "Kit", "Biring"), ("1972", "Ora", "Konsing"), 
+    ("1972", "TD", "Didang"), ("1972", "Rita", "Gloring"), ("1972", "Susan", "Edeng"), 
+    ("1972", "Winnie", "Isang"), ("1972", "Betty", "Maring"), ("1972", "Flossie", "Nitang"), 
+    ("1972", "Grace", "Osang"), ("1972", "Helen", "Paring"), ("1972", "Pamela", "Toyang"), 
+    ("1972", "Therese", "Undang"),
+
+    # 1973
+    ("1973", "Wilda", "Atring"), ("1973", "Billie", "Bining"), ("1973", "Fran", "Kuring"), 
+    ("1973", "Iris", "Daling"), ("1973", "Joan", "Elang"), ("1973", "Kate", "Goring"), 
+    ("1973", "Louise", "Huling"), ("1973", "Marge", "Ibiang"), ("1973", "Nora", "Luming"), 
+    ("1973", "Patsy", "Miling"), ("1973", "Ruth", "Narsing"), ("1973", "Vera", "Openg"),
+
+    # 1974
+    ("1974", "Wanda", "Atang"), ("1974", "Dinah", "Bising"), ("1974", "Emma", "Klaring"), 
+    ("1974", "Gilda", "Deling"), ("1974", "Harriet", "Gading"), ("1974", "Ivy", "Iliang"), 
+    ("1974", "Jean", "Heling"), ("1974", "Lucy", "Miding"), ("1974", "Nadine", "Norming"), 
+    ("1974", "Rose", "Oyang"), ("1974", "Shirley", "Pasing"), ("1974", "Wendy", "Ruping"), 
+    ("1974", "Bess", "Susang"), ("1974", "Carmen", "Tering"), ("1974", "Della", "Uding"), 
+    ("1974", "Elaine", "Wening"), ("1974", "Faye", "Yaning"), ("1974", "Gloria", "Aning"), 
+    ("1974", "Irma", "Bidang"), ("1974", "Judy", "Kading"), ("1974", "Kit", "Delang"),
+
+    # 1975
+    ("1975", "Lola", "Auring"), ("1975", "02W", "TD"), ("1975", "Mamie", ""), 
+    ("1975", "Nina", "Bebeng"), ("1975", "05W", "Karing"), ("1975", "Ora", "Diding"), 
+    ("1975", "Rita", ""), ("1975", "Phyllis", ""), ("1975", "TD", "Etang"), 
+    ("1975", "Tess", ""), ("1975", "Viola", "Gening"), ("1975", "Winnie", ""), 
+    ("1975", "Alice", "Herming"), ("1975", "Betty", "Ising"), ("1975", "Cora", "Luding"), 
+    ("1975", "Doris", ""), ("1975", "Elsie", "Mameng"), ("1975", "Flossie", "Neneng"), 
+    ("1975", "Grace", "Oniang"), ("1975", "Helen", "Pepang"), ("1975", "Ida", ""), 
+    ("1975", "June", "Rosing"), ("1975", "24W", "Sisang"),
+
+    # 1976
+    ("1976", "Kathy", ""), ("1976", "TD", "Asiang"), ("1976", "TD", "Biring"), 
+    ("1976", "Lorna", ""), ("1976", "Marie", "Konsing"), ("1976", "Nancy", ""), 
+    ("1976", "Olga", "Didang"), ("1976", "Pamela", ""), ("1976", "TD", "Gloring"), 
+    ("1976", "Ruby", "Huaning"), ("1976", "Sally", "Isang"), ("1976", "Therese", ""), 
+    ("1976", "Violet", "Lusing"), ("1976", "Wilda", ""), ("1976", "Billie", "Nitang"), 
+    ("1976", "Clara", ""), ("1976", "Dot", "Osang"), ("1976", "Ellen", "Paring"), 
+    ("1976", "Fran", "Reming"), ("1976", "Georgia", ""), ("1976", "Hope", ""), 
+    ("1976", "TD", "Seniang"), ("1976", "Iris", "Toyang"), ("1976", "Joan", ""), 
+    ("1976", "Louise", "Welpring"), ("1976", "Marge", "Yoning"), ("1976", "Nora", "Aring"), 
+    ("1976", "Opal", "Basiang"), ("1976", "TD", "Kayang"), ("1976", "Anita", "Maring"),
+
+    # 1977
+    ("1977", "Patsy", ""), ("1977", "TD", "Atring"), ("1977", "02W", "Bining"), 
+    ("1977", "Ruth", "Kuring"), ("1977", "04W", "Daling"), ("1977", "Sarah", "Elang"), 
+    ("1977", "Thelma", "Goring"), ("1977", "Vera", "Huling"), ("1977", "Wanda", ""), 
+    ("1977", "Amy", "Ibiang"), ("1977", "Eight", ""), ("1977", "Babe", "Miling"), 
+    ("1977", "Carla", "Luming"), ("1977", "Dinah", "Openg"), ("1977", "Emma", ""), 
+    ("1977", "TD", "Narsing"), ("1977", "Freda", "Pining"), ("1977", "Gilda", ""), 
+    ("1977", "Fifteen", ""), ("1977", "TD", "Rubing"), ("1977", "Harriet", "Saling"), 
+    ("1977", "Ivy", ""), ("1977", "Jean", ""), ("1977", "TD", "Tasing"), 
+    ("1977", "Kim", "Unding"), ("1977", "Lucy", "Walding"), ("1977", "Mary", "Yeyeng"),
+
+    # 1978
+    ("1978", "Nadine", ""), ("1978", "Olive", "Atang"), ("1978", "Polly", "Bising"), 
+    ("1978", "Rose", "Klaring"), ("1978", "Shirley", "Deling"), ("1978", "Trix", ""), 
+    ("1978", "Virginia", ""), ("1978", "Wendy", "Emang"), ("1978", "Agnes", ""), 
+    ("1978", "Bess", ""), ("1978", "Bonnie", ""), ("1978", "Carmen", "Iliang"), 
+    ("1978", "Della", "Heling"), ("1978", "TD", "Loleng"), ("1978", "13W", ""), 
+    ("1978", "Elaine", "Miding"), ("1978", "Faye", ""), ("1978", "Gloria", "Norming"), 
+    ("1978", "Hester", ""), ("1978", "Irma", "Ruping"), ("1978", "Judy", ""), 
+    ("1978", "Kit", "Uding"), ("1978", "Lola", "Weling"), ("1978", "Mamie", ""), 
+    ("1978", "Nina", "Yaning"), ("1978", "Ora", "Aning"), ("1978", "TD", "Bidang"), 
+    ("1978", "Phyllis", ""), ("1978", "Rita", "Kading"), ("1978", "Twenty-seven", ""), 
+    ("1978", "Tess", ""), ("1978", "TD", "Delang"), ("1978", "Viola", "Esang"), 
+    ("1978", "Winnie", ""), ("1978", "TD", "Garding"),
+
+    # 1979
+    ("1979", "Alice", ""), ("1979", "Bess", "Auring"), ("1979", "Cecil", "Bebeng"), 
+    ("1979", "Dot", "Karing"), ("1979", "TD", "Diding"), ("1979", "Ellis", "Etang"), 
+    ("1979", "Faye", "Gening"), ("1979", "Gordon", "Herming"), ("1979", "Hope", "Ising"), 
+    ("1979", "TD", "Luding"), ("1979", "Irving", "Mameng"), ("1979", "Judy", "Neneng"), 
+    ("1979", "Ken", "Oniang"), ("1979", "Lola", ""), ("1979", "Mac", "Pepang"), 
+    ("1979", "Nancy", ""), ("1979", "Owen", "Rosing"), ("1979", "Pamela", ""), 
+    ("1979", "Sarah", "Sisang"), ("1979", "Sarah", "Uring"), ("1979", "Roger", "Trining"), 
+    ("1979", "Tip", "Warling"), ("1979", "Vera", "Yayang"), ("1979", "Wayne", "Ading"), 
+    ("1979", "Abby", "Barang"), ("1979", "Ben", "Krising"),
+
+    # 1980
+    ("1980", "TD", "Asiang"), ("1980", "TD", "Biring"), ("1980", "Carmen", ""), 
+    ("1980", "TD", "Konsing"), ("1980", "Dom", "Ditang"), ("1980", "Ellen", ""), 
+    ("1980", "Forrest", "Gloring"), ("1980", "Georgia", "Edeng"), ("1980", "Herbert", "Huaning"), 
+    ("1980", "TD", "Isang"), ("1980", "Ida", "Lusing"), ("1980", "TD", "Maring"), 
+    ("1980", "Joe", "Nitang"), ("1980", "Kim", "Osang"), ("1980", "Lex", ""), 
+    ("1980", "Marge", ""), ("1980", "TD", "Paring"), ("1980", "Norris", "Reming"), 
+    ("1980", "TD", "Seniang"), ("1980", "Orchid", "Toyang"), ("1980", "Ruth", ""), 
+    ("1980", "Percy", "Undang"), ("1980", "Sperry", ""), ("1980", "TD", "Basiang"), 
+    ("1980", "Dinah", ""), ("1980", "TD", "Kayang"), ("1980", "Betty", "Aring"), 
+    ("1980", "Cary", "Yoning"), ("1980", "Ed", "Dorang"), ("1980", "Wynne", "Welpring"),
+
+    # 1981
+    ("1981", "TD", "Atring"), ("1981", "Freda", ""), ("1981", "Gerald", ""), 
+    ("1981", "Holly", ""), ("1981", "Ike", "Bining"), ("1981", "June", "Kuring"), 
+    ("1981", "Kelly", "Daling"), ("1981", "Lynn", "Elang"), ("1981", "TD", "Goring"), 
+    ("1981", "Maury", "Huling"), ("1981", "Nina", "Ibiang"), ("1981", "Ogden", ""), 
+    ("1981", "TD", "Luming"), ("1981", "11W", ""), ("1981", "Phyllis", ""), 
+    ("1981", "Roy", "Miling"), ("1981", "Susan", ""), ("1981", "TD", "Narsing"), 
+    ("1981", "Thad", "Openg"), ("1981", "Vanessa", ""), ("1981", "Warren", ""), 
+    ("1981", "Agnes", "Pining"), ("1981", "Bill", ""), ("1981", "Clara", "Rubing"), 
+    ("1981", "Doyle", ""), ("1981", "Elsie", "Tasing"), ("1981", "TD", "Saling"), 
+    ("1981", "Fabian", "Unsing"), ("1981", "Gay", "Walding"), ("1981", "Hazen", "Yeyeng"), 
+    ("1981", "Irma", "Anding"), ("1981", "Jeff", "Binang"), ("1981", "Kit", "Kadiang"), 
+    ("1981", "Lee", "Dinang"),
+
+    # 1982
+    ("1982", "Mamie", "Akang"), ("1982", "Nelson", "Bising"), ("1982", "Odessa", ""), 
+    ("1982", "Pat", "Klaring"), ("1982", "Ruby", ""), ("1982", "Tess", "Deling"), 
+    ("1982", "Val", "Deling"), ("1982", "Skip", ""), ("1982", "Winona", "Emang"), 
+    ("1982", "TD", "Gading"), ("1982", "TD", "Heling"), ("1982", "Andy", "Iliang"), 
+    ("1982", "Bess", ""), ("1982", "Cecil", "Loleng"), ("1982", "Dot", "Miding"), 
+    ("1982", "Ellis", "Oyang"), ("1982", "Faye", "Norming"), ("1982", "Gordon", ""), 
+    ("1982", "Hope", "Pasing"), ("1982", "Irving", "Ruping"), ("1982", "Judy", "Susang"), 
+    ("1982", "Ken", "Tering"), ("1982", "Lola", ""), ("1982", "Mac", "Uding"), 
+    ("1982", "Nancy", "Weling"), ("1982", "TD", "Yaning"), ("1982", "Owen", ""), 
+    ("1982", "Pamela", "Aning"), ("1982", "Roger", "Bidang"),
+
+    # 1983
+    ("1983", "Sarah", ""), ("1983", "Tip", "Auring"), ("1983", "Vera", "Bebeng"), 
+    ("1983", "Wayne", "Katring"), ("1983", "Abby", "Diding"), ("1983", "Ben", ""), 
+    ("1983", "Carmen", "Etang"), ("1983", "Dom", "Gening"), ("1983", "Ellen", "Herming"), 
+    ("1983", "Forrest", "Ising"), ("1983", "Georgia", "Luding"), ("1983", "TD", "Mameng"), 
+    ("1983", "Herbert", "Neneng"), ("1983", "Ida", "Oniang"), ("1983", "Joe", "Pepang"), 
+    ("1983", "Kim", "Rosing"), ("1983", "Lex", "Sisang"), ("1983", "TD", "Trining"), 
+    ("1983", "Marge", "Uring"), ("1983", "Norris", ""), ("1983", "Orchid", "Warling"), 
+    ("1983", "Percy", "Yayang"), ("1983", "Ruth", "Ading"), ("1983", "Sperry", "Barang"), 
+    ("1983", "Thelma", "Krising"), ("1983", "TD", "Dadang"),
+]
+
+# Write to CSV
+file_path = "x:\\Programming\\Python\\Japan Typhoons\\missing_typhoon_names.csv"
+with open(file_path, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerow(["Year", "International Name", "PAGASA Name"])
+    writer.writerows(data)
+
+print(f"Successfully created {file_path} with {len(data)} rows.")

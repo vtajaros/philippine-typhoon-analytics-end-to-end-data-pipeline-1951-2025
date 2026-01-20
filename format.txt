@@ -1,0 +1,99 @@
+
+Format of RSMC Best Track Data
+
+    1 Header Line for Each Tropical Cyclone
+
+    5    10   15   20   25   30   35   40   45   50   55   60   65   70   75   80
+::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|
+AAAAA BBBB  CCC DDDD EEEE F G HHHHHHHHHHHHHHHHHHHH              IIIIIIII
+
+
+Sample:
+66666 9119  150 0045 9119 0 6             MIRREILE              19920701
+          
+
+
+AAAAA    5 columns     <Indicator> '66666'
+BBBB     4 columns     <International number ID> 
+                          Last two digits of calendar year followed by 2-digit serial 
+                          number ID of the storm of Tropical Storm (TS) intensity or 
+                          greater
+CCC      3 columns     <Number of data lines>
+DDDD     4 columns     <Tropical cyclone number ID>
+                          Serial number ID of the storm of intensity with maximum 
+                          sustained wind speed of 28 kt (near gale) or  greater
+EEEE     4 columns     <International number ID> Replicate BBBB
+F        1 column      <Flag of the last data line> 
+                          0 : Dissipation
+                          1 : Going out of the responsible area of RSMC Tokyo-Typhoon Center
+G        1 column      <Difference between the time of the last data and the time of 
+                          the final analysis> Unit : hour
+H...H   20 columns     <Name of the storm>
+I...I    8 columns     <Date of the latest revision>
+
+
+          
+
+
+    2 Data Lines
+
+    5    10   15   20   25   30   35   40   45   50   55   60   65   70   75   80
+::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|::::+::::|
+AAAAAAAA BBB C DDD EEEE FFFF     GGG     HIIII JJJJ KLLLL MMMM         P
+
+
+Sample:
+91092706 002 5 325 1293  935     095     30180 0140 30400 0260         #
+          
+
+A...A    8 columns     <Time of analysis> yymmddhh (UTC)
+BBB      3 columns     <Indicator> '002'
+C        1 column      <Grade> 1 : Not used
+                                     2 : Tropical Depression (TD)
+                                     3 : Tropical Storm (TS)
+                                     4 : Severe Tropical Storm (STS)
+                                     5 : Typhoon (TY)
+                                     6 : Extra-tropical Cyclone (L)
+                                     7 : Just entering into the responsible area of
+                                         RSMC Tokyo-Typhoon Center
+                                     8 : Not used
+                                     9 : Tropical Cyclone of TS intensity or higher
+DDD      3 columns     <Latitude of the center> Unit : 0.1 degree
+EEEE     4 columns     <Longitude of the center> Unit : 0.1 degree
+FFFF     4 columns     <Central pressure> Unit : hPa
+GGG      3 columns     <Maximum sustained wind speed> Unit : knot (kt)
+H        1 column      <Direction of the longest radius of 50kt winds or greater>
+                          0 : No direction (Longest radius of 50kt winds is 0)
+                          1 : Northeast (NE)
+                          2 : East (E)
+                          3 : Southeast (SE)
+                          4 : South (S)
+                          5 : Southwest (SW)
+                          6 : West (W)
+                          7 : Northwest (NW)
+                          8 : North (N)
+                          9 : (symmetric circle)
+IIII     4 columns     <The longest radius of 50kt winds or greater>
+                          Unit : nautical mile (nm)
+JJJJ     4 columns     <The shortest radius of 50kt winds or greater>
+                          Unit : nautical mile (nm)
+K        1 column      <Direction of the longest radius of 30kt winds or greater>
+                          0 : No direction (Longest radius of 30kt winds is 0)
+                          1 : Northeast (NE)
+                          2 : East (E)
+                          3 : Southeast (SE)
+                          4 : South (S)
+                          5 : Southwest (SW)
+                          6 : West (W)
+                          7 : Northwest (NW)
+                          8 : North (N)
+                          9 : (symmetric circle)
+LLLL     4 columns     <The longest radius of 30kt winds or greater>
+                          Unit : nautical mile (nm)
+MMMM     4 columns     <The shortest radius of 30kt winds or greater>
+                          Unit : nautical mile (nm)
+P        1 column      <Indicator of landfall or passage>
+                          Landfall or passage over the Japanese islands occurred within 
+                          one hour after the time of the analysis with this indicator.
+
+          
