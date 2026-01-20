@@ -5,6 +5,14 @@ As an Electronics Engineering graduate, I developed this project to demonstrate 
 
 ---
 
+## Screenshots
+
+<img width="1919" height="1018" alt="Screenshot 2026-01-21 003029" src="https://github.com/user-attachments/assets/d88cef7a-e0eb-49dd-8590-49d705d148da" />
+<img width="1917" height="1017" alt="image" src="https://github.com/user-attachments/assets/af4f88d6-cf7c-4013-ab17-bf2914a947ac" />
+<img width="1917" height="957" alt="image" src="https://github.com/user-attachments/assets/134fd22e-c640-4ee2-a9d3-0ad1ae8b0db3" />
+<img width="1301" height="663" alt="Screenshot 2026-01-20 230132" src="https://github.com/user-attachments/assets/2640617c-b184-4576-932a-7e08443ea2f7" />
+<img width="683" height="632" alt="Screenshot 2026-01-20 180407" src="https://github.com/user-attachments/assets/3d110b69-6cf0-43fc-bf78-03d2cecebedd" />
+
 ## 🏗️ The Data Pipeline
 
 ### 1. Data Engineering & Extraction (Python)
@@ -49,4 +57,4 @@ The final output is an interactive dashboard designed for disaster risk research
 ---
 
 ## 👨‍💻 About the Author
-**Val Rique Tajaros** *Electronics Engineering Graduate* Passionate about transforming raw sensor and environmental data into actionable insights through Data Engineering and Analytics.
+**Val Rique Tajaros** Passionate about transforming raw sensor and environmental data into actionable insights through Data Engineering and Analytics.
